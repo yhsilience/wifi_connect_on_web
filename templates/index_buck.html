@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Wifi Conf</title>
+    <style>
+        body{
+            background-color: mintcream;
+        }
+        #essid{
+            text-align: left;
+            padding-top: 100px;
+
+        }
+        li{
+            list-style: none;
+            text-indent: 50px;
+        }
+        a{
+            color: blueviolet;
+            text-align: center;
+            display: inline-block;
+            width: 200px;
+            height: 10px;
+        }
+        h1{
+            text-align: center;
+            color: cadetblue;
+            font-family: "Noto Sans CJK TC Regular";
+        }
+    </style>
+</head>
+<body>
+    <h1>西安深睐科技</h1>
+    <div id ="essid">
+    <ul>
+    {% for index in essid_list %}
+            <li><a id="{{index}}"href="{% url 'connect' %}?essid={{index}}" onclick="trunessid()">{{ index }}</a></li>
+            </br>
+    {% endfor %}
+    </ul>
+    </div>
+</body>
+</html>
